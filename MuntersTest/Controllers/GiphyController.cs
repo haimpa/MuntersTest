@@ -24,7 +24,7 @@ namespace MuntersTest.Controllers
         [HttpGet("gettrendys")]
         //Setting catching duration to 1 day (86400 seconds) for trendy gifs of the day
         [ResponseCache(VaryByHeader = "User-Agent", Duration = 86400)]
-        public async Task<string> GetTrendyGifs()
+        public async Task<GiphyResponse> GetTrendyGifs()
         {
             return await _gifService.GetTrendyGiphyAsync();            
         }
@@ -33,9 +33,9 @@ namespace MuntersTest.Controllers
         [HttpGet("searchgifs")]
         //Setting catching duration to 30 minutes (1800 seconds) to search for gifs by term
         [ResponseCache(VaryByHeader = "User-Agent", Duration = 1800)]
-        public async Task<string> SearchGifs(string term)
+        public async Task<GiphyResponse> SearchGifs(string term)
         {
-            return await _gifService.SearchGiphy(term);            
+            return await _gifService.SearchGiphyAsync(term);            
         }
     }
 }

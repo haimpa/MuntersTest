@@ -2,7 +2,7 @@
 {
     public interface IGifService
     {
-        Task<string> GetTrendyGiphyAsync();
-        Task<string> SearchGiphy(string searchTerm);
+        Task<GiphyResponse> GetTrendyGiphyAsync();
+        Task<GiphyResponse> SearchGiphyAsync(string searchTerm);
     }
 }
